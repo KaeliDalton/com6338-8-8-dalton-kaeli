@@ -76,4 +76,13 @@ feelsLikeTemp = data.main.feels_like
 feelsLike.textContent = "Feels like:  " + feelsLikeTemp + '° F'
 weather.appendChild(feelsLike)
 
+//show time updated
+var dateTime = document.createElement('p')
+var date = new Date((data.dt) * 1000)
+var time = date.toLocaleTimeString('en-US', {
+    hour: 'numeric', 
+    minute: '2-digit'
+})
+dateTime.textContent = 'Last Updated:  ' + time
+weather.appendChild(dateTime)
 }
