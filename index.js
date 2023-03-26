@@ -40,4 +40,15 @@ function displayData(data) {
 var location = document.createElement('h2')
 weather.appendChild(location)
 location.textContent = data.name + " , " + data.sys.country
+
+//show map link
+var mapLink = document.createElement('a')
+var lat = data.coord.lat
+var lon = data.coord.lon
+var googleMap = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lon
+weather.appendChild(mapLink)
+mapLink.textContent = "Click to View Map"
+mapLink.href = googleMap
+mapLink.target = "_BLANK"
+
 }
