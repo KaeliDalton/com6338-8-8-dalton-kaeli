@@ -64,5 +64,16 @@ var condition = document.createElement('p')
 condition.setAttribute('style', 'text-transform: capitalize')
 condition.textContent = data.weather[0].description
 weather.appendChild(condition)
+//show current temperature
+var temperature = document.createElement('p')
+temperatureNumber = data.main.temp
+temperature.textContent = "Current:  " + temperatureNumber + '° F'
+weather.appendChild(temperature)
+
+//show feels like temperature
+var feelsLike = document.createElement('p')
+feelsLikeTemp = data.main.feels_like
+feelsLike.textContent = "Feels like:  " + feelsLikeTemp + '° F'
+weather.appendChild(feelsLike)
 
 }
