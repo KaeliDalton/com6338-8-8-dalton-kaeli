@@ -36,4 +36,8 @@ function displayData(data) {
     city = ""
     weather.innerHTML = ""
     search.value = ''
+//show city
+var location = document.createElement('h2')
+weather.appendChild(location)
+location.textContent = data.name + " , " + data.sys.country
 }
