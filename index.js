@@ -51,4 +51,18 @@ mapLink.textContent = "Click to View Map"
 mapLink.href = googleMap
 mapLink.target = "_BLANK"
 
+//show weather condition icon
+var icon = document.createElement('img')
+var iconCode = data.weather[0].icon
+var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png"
+icon.src = iconURL
+icon.alt = data.name
+weather.appendChild(icon)
+
+//show weather condition
+var condition = document.createElement('p')
+condition.setAttribute('style', 'text-transform: capitalize')
+condition.textContent = data.weather[0].description
+weather.appendChild(condition)
+
 }
