@@ -11,12 +11,12 @@ form.onsubmit = function (e) {
     var city = this.search.value.trim()
     var usedURL = URL + city + "&units=imperial&appid=" + API
     //if no input given, clear form
-    if (!city) return
+    if ((!city) || (search.value = "")){
         city = ''
         weather.innerHTML = ''
         search.value = ''
-    
-     fetch(usedURL)
+    }
+     return fetch(usedURL)
 //location not found
         .then(function (res) {
             if (res.status !== 200) 
